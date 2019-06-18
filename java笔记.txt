@@ -1,0 +1,260 @@
+本地dos 命令
+文件夹中文件查看 dir（查看当前本文件里面东西 ）
+在命令里面按回车复制
+cd.. 退回上一层路劲
+cls 清屏命令
+创建文件夹 mkdir 新建文件夹名字（可以创建多级目录）
+删除文件 del
+删除文件夹 rd (必须是空文件夹)
+剪切文件夹  move
+--------------------------------
+1、有字母数字下划线和美元符号组成
+2、不能以数字开头
+3、区分大小写
+4、长度无限制（一般不超过15个字符）
+5、不能是java中的保留字或者是关键字
+
+标识符命名习惯（见其名知其意）
+
+驼峰命名法：首字母小写，以后的每个单词首字母大写  如：userName
+用在：变量取名， 方法取名
+
+帕斯卡命名法：每个单词首字母都大写 如：UserName
+用在：类起名，接口取名
+
+匈牙利命名法：以数据类型为前缀  如：strUserName
+
+
+
+基本数据类型 
+（数值类型）
+浮点型：float（单精度）、double（双精度）
+整数型:byte（字节型）、 short（短整型） 、int（整形） 、long（长整型）
+byte short long 查看数据类型相似
+System.out.println(Byte.MIN_VALUE+"~"+Byte.MAX_VALUE)
+
+int（查看数据类型不同）
+System.out.println(Integer.MIN_VALUE+"~"+Integer.MAX_VALUE);
+（非数值类型）
+
+布尔型;Boolean（true/flase）
+字符型（放在单引号里面而且只能放一个，双引号里面是字符串）：char
+转义（'\n')表示一个字符
+
+//整数类型常量默认类型为int
+long类型如果太大后面加个L就好(告诉是长整型)
+//浮点常量默认数据类型double
+float类型后面加个F
+
+
+算数运算符：
+各位256%10
+百位256/100
+从后面取用百分号
+从前面取用/（舍去几个1后面加几个0）
+后面取
+
+如：int num2=123456
+取234
+num2/100%1000
+或者num2%100000/100
+
+++ --
+
+num++   //num=num+1
+
+++--参与其他运算，前缀后缀不同 前缀++ 先自己+1，再其他运算  后缀++先其他运算 再自己+1
+求n,m,k值
+int n=10，m=12
+int k=n++ - --m  等同于  (n++)-(--m) //10-11
+
+int a=3 b=4
+(a++)/3+(--b)*2-(a--)%6+(b++)*3-(b--)  %是取余 /是取整
+3/3+3*2-4%6+3*3-4=1+6-4+9-4=8
+
+
+
+两个变量值交换
+int a=3;
+int b=4;
+int t=b;(定义一个中间变量)
+b=a;
+a=t;
+
+n=27 m=15(不可以有中间变量）
+n=n+m;
+m=n-m;
+n=n-m;
+
+-------------------------------------------
+for循环
+for(表达式1;表达式2;表达式3){}
+表达式2 ：省略不写，表示循环条件为True（永远为真）
+表达式1：省略不写，
+
+
+break;
+continue;
+
+--------------------
+printf()
+
+Sysout.out.printf("格式化字符串",变量名或者表达式)  
+"格式化字符串"：后面有几个%号，字符串后面就有几个恩字符串或者表达式
+格式化输出：
+%d 十进制的整数 %o 八进制整数 %x 十六进制整数
+%f 浮点数
+%c 字符
+%s 字符串
+
+int num=123;
+Sysout.out.printf("num=%d\n",num);
+
+double num2=3.1415926;
+System.out.printf("num2=%10fabc\n",num2); 不够十位前面拿空格补齐
+System.out.printf("num2=%-10fabc\n",num2);不够十位后面拿空格补齐
+System.out.printf("num2=%.3f\n",num2); 保留小数点后三位
+System.out.printf("num2=%7.3f\n",num2); 一共七位保留小数点后三位
+
+&&（与）||（或）！（非）
+与  两边条件中只要一个表达式的结果为false就为假（有假为假）
+或  有真为真
+&&（与）||（或）是短路运算符
+
+
+求平方根的方法Math.sqrt()
+Sysout.out.print(Math.sqrt(4));
+Math.pow(a.b)
+求a的b次方
+
+
+while 
+ 初始值 while(boolean 循环条件){ 
+ 循环操作 
+ 变量迭代（可以放在循环操作前面也可以放在循环条件后面） 
+}
+-----------------------------------------
+String str=“aBCD”;
+charAt(int 索引号) 获得字符串中指定索引号位置的字符 ，索引号从0开始
+char ch=str.charAt(0);
+
+字符可以进行范围的判断（判断是不是大写字母）
+System.out.print(ch>='A' && ch<='Z')
+结果为True
+System.out.print(ch>='a' && ch<='Z')
+结果为false
+
+字符可以进行加法和减法的操作，需要强制类型转换
+char ch2=(char)(ch-32);
+System.out.print(ch2)
+
+String str = "Hello World";
+// 字符串所有转换为大写
+String case1 = str.toUpperCase();
+//str= str.toUpperCase();
+System.out.println(case1);
+// 字符串所有转换为小写
+String case2 = str.toLowerCase();
+System.out.println(case2);
+
+============================
+方法
+方法声明格式
+修饰符           返回值类型  方法名（参数类型  形式参数1，参数类型 形式参数2，参数类型 形式参数3...）
+public static  void           main  (String[] args)
+{
+
+执行语句；
+redurn 返回值；
+}
+注：定义方法不是void 就必须有redurn 返回值;
+       定义方法是void 就写redurn 没有返回值;
+       
+2019-6-14
+----------------------
+递归：
+public static void main(String[] args) {
+		// 递归实现 求自然数之和
+		int sum = getSum(4);
+		System.out.println(sum);
+	}
+	//下面的方法使用递归实现求1-n的和
+	public static int getSum(int n) {
+
+		if (n == 1) {
+			//满足条件递归结束
+			return 1;
+		}
+		int temp = getSum(n-1);
+		return temp+n;
+
+	}
+
+---------------------------------------------------
+数组：
+定义数组格式:int [] x=new int[100]
+
+int [] x;  声明一个int [] 类型的值
+x=new int[100];创建一个长度为100的数组
+
+x.length  打印数组的长度
+
+数据类型                     默认初始化值            数据类型                   默认初始化值
+byte short long int          0		boolean 		false
+float double                    0.0		引用数据类型	null 表示变量不引用任何对象
+char	        一个空字符串，即‘\u0000e’
+
+类型 [] 数组名=new 类型 [] {元素，元素，....};
+类型 [] 数组名= {元素，元素，....};
+
+动态初始化：由系统自动给元素赋初值的方式
+静态初始化：在定义数组的同时就为数组的每个元素赋值
+
+注意：数组索引不能超过范围 即 0~length-1
+
+1>数组遍历
+2>数组最值
+3>数组排序
+4>多维数组
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
